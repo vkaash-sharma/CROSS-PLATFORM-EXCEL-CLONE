@@ -57,6 +57,7 @@ color: #f1f2f6;
 }
 .address-bar {
     width: 5rem;
+    text-align: center;
 }
 .formula-bar {
     width: calc(100vw - 5rem - 0.7rem - 0.7rem - 0.7rem);
@@ -114,19 +115,20 @@ color: #f1f2f6;
     width: 2rem;
     background-color: #747d8c;
     position: fixed;
-    z-index: 1;
+    z-index: 5;
 }
 .address-col-cont {
     position: sticky;
     top: 2rem;
-    left: 0; 
-    left: 2rem;
+    left: 0;
 
 }
 .address-row-cont {
     display: flex;
     position: sticky;
-    top: 0;
+    top:  0;
+    left: 2rem;
+
 
 }
 .cells-cont {

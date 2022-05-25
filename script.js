@@ -27,15 +27,15 @@ for(let i = 0 ; i < rows ; i++){
         cell.setAttribute("class" , "cell")
         cell.setAttribute("contenteditable" , "true");
         rowCont.appendChild(cell);
-        // addListnerForAddressBarDisplay(cell , i , j);
+        addListnerForAddressBarDisplay(cell , i , j);
     }
     cellsCont.appendChild(rowCont);
 }
 
-// function addListnerForAddressBarDisplay(cell , i , j){
-//     cell.addEventListner("click" ,(e) => {
-//         let rowID =i+1;
-//         let colID = String.fromCharCode(65 + j);
-//         addressBar.value =`${colID}${rowID}`
-//     })
-// }
+function addListnerForAddressBarDisplay(cell , i , j){
+    cell.addEventListener("click" ,(e) => {
+        let rowID =i+1;
+        let colID = String.fromCharCode(65 + j);
+        addressBar.value =`${colID}${rowID}`
+    })
+}
