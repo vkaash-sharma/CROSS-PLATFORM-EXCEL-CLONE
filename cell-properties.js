@@ -1,7 +1,8 @@
 // storage 
 
 let sheetDB = [];
-for(let i = 0 ; i < rows , i++){
+for(let i = 0 ; i < rows ; i++)
+{
       let sheetRow = [] ;
     for(let j = 0 ; j < cols ; j++){
       let cellProp = {
@@ -31,3 +32,26 @@ let alignment = document.querySelectorAll(".alignment");
 let leftAlign = alignment[0];
 let centerAlign = alignment[1];
 let rightAlign = alignment[2];
+
+let addressBar = document.querySelector(".address-bar");
+
+// application of two way binding 
+// attach property listeners
+bold.addEventListener("click" , (e) => {
+    let address = addressBar.ariaValueMax;
+    activecell(address);
+})
+
+function activecell(address) {
+   let [rid , cid] = decodeRIDCIDFromAddress(address);
+//    access cell & storage object
+   let cell = document.querySelector(`.cell[rid="${rid}"][cid="${cid}"]`); 
+}
+
+function decodeRIDCIDFromAddress(address){
+    // address -> "A1"
+    let rid = Number(address.slice(1) - 1);
+    let cid = Number(String.charCodeAt(0)) - 65;
+    return [rid , cid];
+}
+
