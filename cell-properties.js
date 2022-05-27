@@ -38,7 +38,7 @@ let addressBar = document.querySelector(".address-bar");
 // application of two way binding 
 // attach property listeners
 bold.addEventListener("click" , (e) => {
-    let address = addressBar.ariaValueMax;
+    let address = addressBar.value;
     activecell(address);
 })
 
