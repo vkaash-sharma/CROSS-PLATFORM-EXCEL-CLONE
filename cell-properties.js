@@ -32,26 +32,35 @@ let alignment = document.querySelectorAll(".alignment");
 let leftAlign = alignment[0];
 let centerAlign = alignment[1];
 let rightAlign = alignment[2];
-
-let addressBar = document.querySelector(".address-bar");
+let activeColorProp = "#d1d8e0";
+let inactiveColorProp = "#ecf0f1";
 
 // application of two way binding 
 // attach property listeners
 bold.addEventListener("click" , (e) => {
     let address = addressBar.value;
-    activecell(address);
+    let [cell , cellProp] =activecell(address);
+
+    // modification
+  cellProp.bold = !cellProp.bold;
+  cell.style.fontWeight = cellProp.bold ? "bold" : "normal";
+  bold.style.backgroundColor = cellProp.bold ? activeColorProp : inactiveColorProp;
+
+
 })
 
 function activecell(address) {
    let [rid , cid] = decodeRIDCIDFromAddress(address);
 //    access cell & storage object
-   let cell = document.querySelector(`.cell[rid="${rid}"][cid="${cid}"]`); 
+   let cell = document.querySelector(`.cell[rid="${rid}"][cid="${cid}"]`); \
+   let cellProp = sheetDB[rid][cid];
+   return [cell  , cellProp];
 }
 
 function decodeRIDCIDFromAddress(address){
     // address -> "A1"
     let rid = Number(address.slice(1) - 1);
-    let cid = Number(String.charCodeAt(0)) - 65;
+    let cid = Number(address.charCodeAt(0)) - 65;
     return [rid , cid];
 }
 
