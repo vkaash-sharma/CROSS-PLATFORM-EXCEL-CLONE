@@ -29,6 +29,9 @@ color: #f1f2f6;
     margin-right: 1rem;
 
 }
+.cellprop-actions-cont >*:hover{
+    cursor: pointer;
+}
 .cellprop-actions-cont > select {
     border: none;
     outline: none;
