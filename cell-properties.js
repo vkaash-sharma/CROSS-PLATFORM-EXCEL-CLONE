@@ -16,6 +16,7 @@ for(let i = 0 ; i < rows ; i++)
           BGcolor :"#000000",   // just for indication purpose
           value : "",
           formula : "",
+          children : [] ,
         }
       sheetRow.push(cellProp);
     }
