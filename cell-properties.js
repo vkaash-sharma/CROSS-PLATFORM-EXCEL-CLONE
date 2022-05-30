@@ -13,8 +13,10 @@ for(let i = 0 ; i < rows ; i++)
           fontFamily : "monospace" ,
           fontSize : "14" ,
           fontColor : "#000000" ,
-          BGcolor :"#000000"   // just for indication purpose
-      }
+          BGcolor :"#000000",   // just for indication purpose
+          value : "",
+          formula : "",
+        }
       sheetRow.push(cellProp);
     }
     sheetDB.push(sheetRow);
@@ -201,7 +203,7 @@ function addListenerToAttachCellProperties(cell){
 
 
 
-function activecell(address) {
+function getCellAndCellProp(address) {
    let [rid , cid] = decodeRIDCIDFromAddress(address);
 //    access cell & storage object
    let cell = document.querySelector(`.cell[rid="${rid}"][cid="${cid}"]`); 
