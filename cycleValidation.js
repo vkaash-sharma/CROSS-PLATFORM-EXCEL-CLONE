@@ -31,12 +31,12 @@ function isGraphCylic(graphComponentMatrix) {
         for(let j = 0 ;j < cols ; j++ ) {
             if(visited[i][j] === false) {
             let response = dfsCycleDetection(graphComponentMatrix , i , j , visited ,dfsVisited);            
-            if(response == true) return true;
+            if(response == true) return [i , j];
         }
      } 
     }
 
-  return false;
+  return null;
 }
 // start -> vis(true) dfsvis(true)
 // end - > dfsvis(false)
