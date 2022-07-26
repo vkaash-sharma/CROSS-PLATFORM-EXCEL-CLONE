@@ -88,6 +88,9 @@ color: #f1f2f6;
     padding-right: 0.5rem;
     width: 2vw;
 }
+.sheet-add-icon:hover {
+    cursor: pointer;
+}
 .sheets-folder-cont {
     height: 80%;
     width: 5rem;
@@ -95,16 +98,26 @@ color: #f1f2f6;
     align-items:center;
     /* background-color: yellow; */
     width: calc(100vw - 2vw);
+    overflow: auto;
 
     
 }
 .sheet-folder{
+    height: 80%;
     text-decoration: underline;
     font-weight: bold;
     text-decoration-thickness: 3px;
     font-size: 0.9rem;
+    text-align: center;
+    /* background-color: lightblue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
+.sheet-content {
+    width: 5rem;
+    /* background-color: lightgreen; */
 }
 
 .grid-cont{
